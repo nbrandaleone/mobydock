@@ -27,3 +27,13 @@ mobydock:
     - .:/mobydock
   ports:
     - '8000:8000'
+      
+cadvisor:
+  image: google/cadvisor:latest
+  ports:
+    - '8080:8080'
+  volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
